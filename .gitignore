@@ -1,0 +1,10 @@
+Thumbs.db
+*/Thumbs.db
+*.psd
+*.zip
+*.tmp
+*.pdf
+.vscode/*
+sftp-config.json
+sftp.json
+.sass-cache

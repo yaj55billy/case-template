@@ -1,0 +1,101 @@
+
+@import "reset"
+@import "utils"
+
+// layout 共用元素
+@import "layout/frame"
+@import "layout/header"
+@import "layout/footer"
+
+// 元件 
+@import "components/ani"
+@import "components/btn"
+@import "components/card"
+@import "components/form"
+@import "components/lightbox"
+@import "components/table"
+
+
+/* index section */
+
+// 主視覺
+.kv
+  background-color: #c4e5f6
+  padding-bottom: 25px
+  // background-image: url('../images/')
+  // background-position: center 
+  // background-size: cover 
+  &-container 
+    padding: 0 15px
+    font-size: 0
+  &-main 
+    +clearfix()
+    position: relative
+  &-aircraft
+    position: absolute
+    left: 0
+    right: 7%
+    top: 55%
+    transform: translateY(-50%) 
+    margin: auto
+    text-align: center
+    width: 23vw
+  &-title 
+    float: left
+    width: 45%
+  &-map 
+    float: left
+    width: 55%
+
+// 主視覺 END
+
+// 活動辦法 
+.act
+  position: relative 
+  background-color: #fef6e5
+  padding-bottom: 160px
+  // background-image: url('../images/')
+  // background-position: center 
+  // background-size: cover 
+  &-decora 
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    display: none
+    &__left
+      position: absolute
+      left: 0
+      top: 0
+    &__right
+      position: absolute
+      right: 0
+      bottom: 0
+
+  &-date 
+    text-align: center
+    font-size: 0
+    &__list 
+      display: inline-block
+      vertical-align: top
+      margin: 0 30px
+      @media screen and (max-width: 991px)
+        width: 31.33333%
+        margin: 0 1%
+      @media screen and (max-width: 480px)
+        width: 100%
+        margin: 0
+  &-part
+    margin-top: 65px
+    .text,.table
+      margin-top: 30px
+    .text 
+      padding: 0 55px
+      @media screen and (max-width: 991px)
+        padding: 0 
+    
+// 活動辦法 END
+  
+
+  

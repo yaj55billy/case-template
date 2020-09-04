@@ -1,0 +1,145 @@
+// header
+header
+  @include clearfix()
+  width: 100%
+  box-sizing: border-box
+  padding: 22px 25px 9px
+  background-color: #fff
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5)
+  // @include RWD(pad){
+  //   padding: 18px 25px 6px;
+  // }
+  // @include RWD(mobile){
+  //   padding: 15px 15px 5px;
+  // }
+
+  .logo
+    width: 195px
+    float: left
+    display: block
+  
+  .sub
+    width: 125px
+    float: right
+    @include RWD(mobile)
+      width: 100px
+    
+    @include RWD(mobile-small)
+      width: 80px
+  
+  // position: fixed
+  // transition: all 0.4s
+  // top: 0
+  // left: 0
+  // z-index: 50
+
+  nav
+    float: right
+    ul
+      transition: all 0.5s
+      &.active
+        @include RWD(pad)
+          right: 0
+        @include RWD(mobile)
+          right: 0
+        
+      @include RWD(pad)
+        background-color: #fbfcfd
+        width: 185px
+        height: 100%
+        padding: 10px 10px 0
+        position: fixed
+        top: 65px
+        right: -205px
+      
+      @include RWD(mobile)
+        background-color: #fbfcfd
+        width: 185px
+        height: 100%
+        padding: 10px 10px 0
+        position: fixed
+        top: 65px
+        right: -205px
+        &.active
+          right: 0px
+        
+      li
+        display: inline-block
+        vertical-align: middle
+        margin: 0 3px
+        @include RWD(pad)
+          display: block
+          text-align: center
+        @include RWD(mobile)
+          display: block
+          text-align: center
+        
+        a
+          width: 152px
+          height: 57px
+          line-height: 58px
+          display: block
+          background-image: url('../images/nav.png')
+          background-size: 470px 120px
+          @include RWD(pad)
+            margin: 10px auto
+          @include RWD(mobile)
+            margin: 10px auto
+          
+        &.btn_1
+          a
+            background-position: 0px 0px
+          &:hover
+            a
+              background-position: 0px 183px
+            
+        &.btn_2
+          a
+            background-position: 310px 0px
+          &:hover
+            a
+              background-position: 310px 183px
+            
+        &.btn_3
+          a
+            background-position: 151px 0px
+          &:hover
+            a
+              background-position: 151px 183px
+    // 三線
+    .menu
+      position: absolute
+      top: 35%
+      right: 5%
+      width: 32px
+      height: 32px
+      margin: auto
+      cursor: pointer
+      padding-left: 0
+      transition: all 0.3s
+      .menu-global
+        backface-visibility: hidden
+        position: absolute
+        left: 0
+        border-top: 4px solid #ff9891
+        width: 100%
+        transition: 0.4s
+      .menu-top 
+        top: 0
+      .menu-middle 
+        top: 10px
+      .menu-bottom 
+        top: 20px
+      .menu-top-click
+        backface-visibility: hidden
+        top: 15px
+        transform: rotate(50deg)
+        transition: 0.45s 0.4s
+      .menu-middle-click
+        opacity: 0
+      .menu-bottom-click
+        backface-visibility: hidden
+        top: 15px
+        transform: rotate(-410deg)
+        transition: 0.45s 0.4s
+

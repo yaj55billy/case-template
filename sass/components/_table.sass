@@ -1,0 +1,41 @@
+
+$table-border: #ccc
+$thead-color: #44b1dd
+.table
+  width: 100%
+  .th,.td
+    vertical-align: middle
+    text-align: center
+    border: solid 1px $table-border
+
+  .td 
+    // border-right: solid 2px #d7ecf7
+    // border-bottom: solid 2px #d7ecf7
+    &:last-child 
+      border-right: none
+
+  .thead      
+    .th
+      +text_set(26px,700,#ffffff)
+      background-color: $thead-color
+      &:nth-child(1)
+        border-top-left-radius: 28px
+      &:last-child 
+        border-top-right-radius: 28px
+      
+  .tbody
+    // background-color: #ffffff
+    .td
+      +text_set(22px,700,#413e39)
+
+  .tfoot     
+    .td 
+      +text_set(20px,700,#413e39)
+      background-color: #ffffff
+      border: none
+      border-bottom-left-radius: 28px
+      border-bottom-right-radius: 28px
+      
+  
+    
+      

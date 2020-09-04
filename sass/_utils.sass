@@ -1,0 +1,136 @@
+/*------------------------- var -------------------------*/
+// $f12: .75rem
+// $f13: .8125rem
+// $f14: .875rem
+// $f15: .9375rem
+// $f16: 1rem
+// $f17: 1.063rem
+// $f18: 1.125rem
+// $f19: 1.188rem
+// $f20: 1.25rem
+// $f21: 1.313rem
+// $f22: 1.375rem
+// $f23: 1.438rem
+// $f24: 1.5rem
+// $f25: 1.563rem
+// $f26: 1.625rem
+
+// $f28: 1.75rem
+// $f30: 1.875rem
+// $f32: 2rem
+// $f34: 2.125rem
+// $f36: 2.25rem
+// $f38: 2.375rem
+// $f40: 2.5rem
+// $f42: 2.625rem
+// $f44: 2.75rem
+// $f46: 2.875rem
+// $f48: 3rem
+// $f50: 3.125rem
+// $f56: 3.5rem
+// $f62: 3.875rem
+// $f72: 4.5rem
+
+
+// responsive web by width
+$screen_1366: 1366px
+$screen_1024: 1024px
+$screen_980: 980px
+$screen_768: 768px
+$screen_568: 568px
+$screen_420: 420px
+$screen_400: 400px
+
+@mixin RWD($mode) 
+  @if $mode == 1366 
+    @media (max-width: $screen_1366) 
+      @content
+  @else if $mode == 1024 
+    @media (max-width: $screen_1024) 
+      @content
+  @else if $mode == 980 
+    @media (max-width: $screen_980)
+       @content
+  @else if $mode == 768 
+    @media (max-width: $screen_768) 
+      @content
+  @else if $mode == 568 
+    @media (max-width: $screen_568) 
+      @content
+  @else if $mode == 420 
+    @media (max-width: $screen_420) 
+      @content
+  @else if $mode == 400 
+    @media (max-width: $screen_400)
+      @content
+
+@mixin clearfix 
+  &:after 
+    content: ""
+    display: table
+    clear: both
+
+// 漸層 左到右
+@mixin gradient_hori($color_1,$color_2,$color_3)
+  background: $color_2
+  background: -moz-linear-gradient(left, $color_1, $color_2, $color_3)
+  background: -webkit-linear-gradient(left, $color_1,$color_2,$color_3)
+  background: linear-gradient(to right, $color_1,$color_2,$color_3)
+
+// 漸層 上到下
+@mixin gradient_vertical($color_1,$color_2,$color_3)
+  background: $color_2
+  background: -moz-linear-gradient(top, $color_1, $color_2, $color_3)
+  background: -webkit-linear-gradient(top, $color_1,$color_2,$color_3)
+  background: linear-gradient(to bottom, $color_1,$color_2,$color_3)
+
+// 漸層 有角度  https://www.colorzilla.com/gradient-editor/
+@mixin gradient_deg($deg,$c1,$c2,$c1_per,$c2_per)
+  background: $c1
+  background: -moz-linear-gradient($deg,$c1 $c1_per,$c2 $c2_per)
+  background: -webkit-linear-gradient($deg,$c1 $c1_per,$c2 $c2_per)
+  background: linear-gradient($deg,$c1 $c1_per,$c2 $c2_per)
+
+
+
+// 文字常用set
+@mixin text_set($fz,$fw,$color)
+  font-size: $fz
+  font-weight: $fw
+  color: $color
+
+// 按鈕常用set
+@mixin btn_set($pd_tb,$pd_lr,$text_color,$bg_color)
+  display: inline-block
+  padding: $pd_tb $pd_lr
+  color: $text_color
+  background-color: $bg_color
+  transition: all 0.3s
+
+// 元素上下左右置中
+@mixin center($position: absolute) 
+  position: $position
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+
+// background-image
+@mixin bg_image($url:'',$size:auto,$position: center,$repeat: no-repeat)
+  background-image: url($url)
+  background-size: $size
+  background-position: $position
+  background-repeat: $repeat
+
+// 上下左右置中
+@mixin position_middle()
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  left: 0
+  right: 0
+  margin: auto
+  text-align: center
+
+
+
+

@@ -1,0 +1,114 @@
+html, body
+  font-family: "微軟正黑體", "Microsoft JhengHei", serif
+  font-size: 16px
+  line-height: 1.5
+  position: relative
+
+.document
+  width: 100%
+  overflow: hidden
+
+
+// 斷點  
+// 1199
+// 991
+// 767
+// 480
+  
+// pc自訂  1200~自訂 1199~992 991~768  767以下
+// 自訂  1140  960 720 100% pd15
+
+
+
+.container 
+  margin: 0 auto
+  @media (max-width: 1199px) 
+
+    width: 960px
+  @media (max-width: 991px) 
+    width: 720px
+  @media (max-width: 767px) 
+    width: 100%
+    padding-right: 15px
+    padding-left: 15px
+  // @media (min-width: 768px)
+  //   width: 750px
+  //   padding-right: 0px
+  //   padding-left: 0px
+  // @media (min-width: 992px)
+  //   width: 970px
+  // @media (min-width: 1200px) 
+  //   width: 1170px
+
+
+
+.mobile
+  display: none
+  @media screen and (max-width: 767px)
+    display: block
+
+.desk
+  display: block
+  @media screen and (max-width: 767px)
+    display: none
+
+img
+  max-width: 100%
+  max-height: 100%
+  height: auto
+
+
+// 文字相關
+
+h1,.h1
+h2,.h2
+h3,.h3
+h4,.h4
+h5,.h5
+h6,.h6
+
+h2.title
+  +text_set(30px,700,#fff)
+  @media screen and (max-width: 767px)
+    font-size: 26px
+p.text 
+  +text_set(24px,500,#000)
+  @media screen and (max-width: 767px)
+    font-size: 20px
+
+.title-area
+  position: relative
+  background-image: url('../images/title-bg.jpg')
+  // background-size: cover
+  border-radius: 99em
+  width: 575px
+  height: 72px
+  line-height: 72px
+  margin: 0 auto
+  @media screen and (max-width: 767px)
+    width: 100%
+  &__icon 
+    position: absolute
+    left: 15%
+    top: 0
+    transform: translateY(-20px) scale(1.2)
+  .title
+    text-align: center
+    letter-spacing: 10px
+
+  &.last
+    .title-area__icon
+      left: 10%
+
+// 文字相關 END
+
+.gotop
+  position: fixed
+  right: 5%
+  bottom: 5%
+  z-index: 100
+
+
+// @font-face 
+//   font-family: noto-sans
+//   src: url(https://fonts.googleapis.com/css?family=Noto+Sans+TC)

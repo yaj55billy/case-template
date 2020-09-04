@@ -1,0 +1,37 @@
+//- 
+  form template 
+  form-group >> 包 form-item
+  日期的?? datepicker
+
+form.form 
+  .form-group  
+    .form-item 
+      label.form-item__label(for="username") 姓名
+      input.form-item__input(type="text" name="username" id="username" placeholder="請輸入姓名" maxlength="15" onkeyup="value=value.replace(/[d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[d]/g,'')")
+    .form-item
+      label.form-item__label(for='mobile') 手機
+      input#mobile.form-item__input(type='tel', name='mobile', placeholder='請輸入手機', maxlength='11', onkeyup="value=value.replace(/[A-Za-z一-龥]/g,'')", onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[A-Za-z一-龥]/g,''))")
+    .form-item.email
+      label.form-item__label(for='email') Email信箱
+      input#email.form-item__input(type='email', name='email', placeholder='請輸入Email信箱')
+    .form-item.addr
+      label.form-item__label(for='detail') 地址
+      .addr-con
+        #twzipcode.twzipcode
+        input#detail.form-item__input(type='text', name='detail', placeholder='請輸入地址')
+      input#addr(type='hidden', name='addr')
+    .form-agree
+      .custom-checkbox
+        input#agree.checked(type='checkbox', name='agree')
+        .fake-checkbox
+      label.form-item__label(for='agree')
+        | 我已閱讀且同意
+        a.read(href='notice.php', target='_blank') 活動辦法與注意事項
+
+    
+
+
+
+
+      
+      
