@@ -21,6 +21,9 @@
   change
 */
 
+// jQ API 
+// https://api.jquery.com/
+
 /* ---------------------------------------------
   常用 TEXT
 --------------------------------------------- */
@@ -117,7 +120,7 @@
   window scroll 卷軸滾動時不斷偵測
 --------------------------------------------- */
 
-$(window).scroll(function() {
+$(window).scroll(function () {
   var wct = $(window).scrollTop();
   console.log(wct);
   // if (window_scrollTop > 120) {
@@ -131,12 +134,12 @@ $(window).scroll(function() {
   瀏覽器偵測
 --------------------------------------------- */
 
-var getExplorer = (function() {
+var getExplorer = (function () {
   var explorer = window.navigator.userAgent,
-    compare = function(s) {
+    compare = function (s) {
       return explorer.indexOf(s) >= 0;
     },
-    ie11 = (function() {
+    ie11 = (function () {
       return "ActiveXObject" in window;
     })();
   if (compare("MSIE") || ie11) {
@@ -178,7 +181,7 @@ if (navigator.userAgent.match(/android/i)) {
       header
   --------------------------------------------- */
 
-$(window).scroll(function() {
+$(window).scroll(function () {
   var window_scrollTop = $(window).scrollTop();
   if (window_scrollTop > 10) {
     $("header").addClass("active");
@@ -302,7 +305,7 @@ switch (day) {
   --------------------------------------------- */
 
 var len = 55;
-$(".index_geosstar_list_con").each(function(i) {
+$(".index_geosstar_list_con").each(function (i) {
   if ($(this).text().length > len) {
     // $(this).attr("title",$(this).text());
     var text =
@@ -321,7 +324,7 @@ var $win = $(window),
   h = $win.height();
 
 $win
-  .on("resize", function() {
+  .on("resize", function () {
     w = $win.width();
     h = $win.height();
     // 這邊可寫需遇到 resize 的內容
@@ -332,7 +335,7 @@ $win
   防止連續點擊
   --------------------------------------------- */
 
-$(".jsMbCollapseBtn").click(function(e) {
+$(".jsMbCollapseBtn").click(function (e) {
   if ($(this).hasClass("active")) {
     // 防止 active狀態繼續點
     return false;
@@ -430,6 +433,6 @@ function onOrientationchange() {
 //   });
 // });
 
-$(".collapse").click(function(e) {
+$(".collapse").click(function (e) {
   console.log($(this).attr("href"));
 });

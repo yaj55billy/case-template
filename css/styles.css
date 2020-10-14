@@ -775,3 +775,34 @@ textarea {
     padding: 0;
   }
 }
+
+.icon-test:before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("../images/icon.png");
+  background-repeat: no-repeat;
+  width: 35px;
+  padding-bottom: 44px;
+  background-position: 0 0;
+  overflow: hidden;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .icon-test:before {
+    background-image: url("../images/icons@2x.png");
+    background-size: 500px 500px;
+  }
+}
+@media only screen and (min--moz-device-pixel-ratio: 2) {
+  .icon-test:before {
+    background-image: url("../images/icons@2x.png");
+    background-size: 500px 500px;
+  }
+}
+@media only screen and (min-device-pixel-ratio: 2) {
+  .icon-test:before {
+    background-image: url("../images/icons@2x.png");
+    background-size: 500px 500px;
+  }
+}

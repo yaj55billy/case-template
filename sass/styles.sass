@@ -96,6 +96,45 @@
         padding: 0 
     
 // 活動辦法 END
-  
+
+
+// 參考
+//   https://css-tricks.com/snippets/css/retina-display-media-query/
+//   https://medium.com/nick-%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%AD%B8%E7%BF%92%E8%A8%98/%E7%B6%B2%E9%A0%81%E5%89%8D%E7%AB%AF%E5%84%AA%E5%8C%96-%E9%9F%BF%E6%87%89%E5%BC%8F%E5%9C%96%E7%89%87%E5%AF%A6%E4%BD%9C-3ab1989b9d9c  
+
+.icon-test
+  &:before
+    content: ""
+    position: relative
+    display: inline-block
+    vertical-align: middle
+    background-image: url('../images/icon.png')
+    background-repeat: no-repeat
+    width: 35px
+    padding-bottom: 44px
+    background-position: 0 0
+    overflow: hidden
+    @media only screen and (-webkit-min-device-pixel-ratio: 2)
+      background-image: url('../images/icons@2x.png')
+      background-size: 500px 500px
+    @media only screen and (min--moz-device-pixel-ratio: 2)
+      background-image: url('../images/icons@2x.png')
+      background-size: 500px 500px
+    @media only screen and (min-device-pixel-ratio: 2)
+      background-image: url('../images/icons@2x.png')
+      background-size: 500px 500px
+
+      // only screen and (-o-min-device-pixel-ratio: 2/1),
+      // only screen and (min-resolution: 192dpi),
+      // only screen and (min-resolution: 2dppx)
+
+
+    // @media 
+    //   only screen and (min-device-pixel-ratio: 2),only screen and (-webkit-min-device-pixel-ratio: 2)
+    //     background-image: url('../images/icons@2x.png')
+    //     background-size: 500px 500px
+          
+
+
 
   
