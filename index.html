@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
   </head>
   <body>
-    <div class="document">
+    <div class="document" style="min-height: 2500px;">
       <header class="header">
         <div class="header-container"><a class="logo" href="#"></a>
           <nav class="nav"> <a class="nav-list" href="">活動辦法</a><a class="nav-list" href="">得獎公告</a><a class="nav-list" href="">注意事項</a><a class="nav-list" href="">回首頁  </a></nav>
@@ -33,7 +33,7 @@
             <div class="form-item"> 
               <label class="form-item__label" for="username">姓名</label>
               <input class="form-item__input" type="text" name="username" id="username" placeholder="請輸入姓名" maxlength="15" onkeyup="value=value.replace(/[d]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[d]/g,'')"/>
-            </div>
+            </div>    
             <div class="form-item">
               <label class="form-item__label" for="mobile">手機</label>
               <input class="form-item__input" id="mobile" type="tel" name="mobile" placeholder="請輸入手機" maxlength="11" onkeyup="value=value.replace(/[A-Za-z一-龥]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[A-Za-z一-龥]/g,''))"/>
@@ -57,10 +57,40 @@
               </div>
               <label class="form-item__label" for="agree">我已閱讀且同意<a class="read" href="notice.php" target="_blank">活動辦法與注意事項</a></label>
             </div>
+
           </div>
         </div>
       </form><span class="icon-test"></span>
+      <!-- <div>
+        <select name="" id="conSubsidySource" class="w-90p m-100p" data-test="1">
+          <option value="" disabled selected>貸款/補助/獎學金來源</option>
+          <option value="" style='display:none;' class="ios-none"></option>
+          <option value="企業">企業</option>
+          <option value="個人">個人</option>
+        </select>
+      </div> -->
       <script src="js/all.js"></script>
+      <script>
+        	// $('#conSubsidySource').on('change', function () {
+          //   var checkVal = $(this).val();
+          //   if (checkVal === '企業') {
+          //     alert('企業');
+          //   }
+          //   if (checkVal === '個人') {
+          //     alert('個人');
+          //   }
+          // });
+          window.addEventListener('scroll', function(e){
+            // doSomething()
+            // console.log(e);
+            // console.log(document.documentElement.scrollTop);
+            // console.log(document.body.scrollTop);
+          });
+          // window.onscroll = function() {
+          //   // doSomething()
+          //   console.log('222');
+          // };
+      </script>
     </div>
   </body>
 </html>

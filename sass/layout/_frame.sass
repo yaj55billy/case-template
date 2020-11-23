@@ -1,11 +1,29 @@
+
+// 創建 font-family 變數
+// font-size 現在用 px 即可 (目前狀況)
+// line-height 可以看看一般需要多少比較合乎視覺上，根據不同再做調整
+// 字體目前不用特別列變數
+
+// 設計師用的尺寸：   工程師所用的尺寸
+// 16px        :   1rem
+// 20px        :   1.25rem
+// 24px        :   1.5rem
+// 28px        :   1.75rem
+// 32px        :   2rem
+// 40px        :   2.5rem
+
+// font 函式
+
+
+$font-family: "微軟正黑體", "Microsoft JhengHei", serif
+  
 html, body
-  font-family: "微軟正黑體", "Microsoft JhengHei", serif
+  font-family: $font-family
   font-size: 16px
   line-height: 1.5
   position: relative
 
 .document
-  width: 100%
   overflow: hidden
 
 
@@ -45,7 +63,6 @@ html, body
 
 img
   max-width: 100%
-  max-height: 100%
   height: auto
 
 

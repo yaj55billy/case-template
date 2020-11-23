@@ -120,15 +120,15 @@
   window scroll 卷軸滾動時不斷偵測
 --------------------------------------------- */
 
-$(window).scroll(function () {
-  var wct = $(window).scrollTop();
-  console.log(wct);
-  // if (window_scrollTop > 120) {
-  //   $('.page_people').addClass('active');
-  // } else {
-  //   $('.page_people').removeClass('active');
-  // }
-});
+// $(window).scroll(function () {
+//   var wct = $(window).scrollTop();
+//   console.log(wct);
+//   // if (window_scrollTop > 120) {
+//   //   $('.page_people').addClass('active');
+//   // } else {
+//   //   $('.page_people').removeClass('active');
+//   // }
+// });
 
 /* ---------------------------------------------
   瀏覽器偵測
@@ -181,14 +181,14 @@ if (navigator.userAgent.match(/android/i)) {
       header
   --------------------------------------------- */
 
-$(window).scroll(function () {
-  var window_scrollTop = $(window).scrollTop();
-  if (window_scrollTop > 10) {
-    $("header").addClass("active");
-  } else {
-    $("header").removeClass("active");
-  }
-});
+// $(window).scroll(function () {
+//   var window_scrollTop = $(window).scrollTop();
+//   if (window_scrollTop > 10) {
+//     $("header").addClass("active");
+//   } else {
+//     $("header").removeClass("active");
+//   }
+// });
 
 // 漢堡選單
 // var Menu = {
