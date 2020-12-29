@@ -30,10 +30,159 @@
           </nav>
         </div>
       </header>
-      <div class='main'></div>
+      <div class='main'>
+        <div class="container" style="background-color: aquamarine; width: 100%; height: 400px;">
+          <div class="test">
+          
+          </div>
+        </div>
+      </div>
       <footer class='footer'></footer>
       <script src='vendor/js/wow.min.js'></script>
       <script src='js/all.js'></script>
+      <script>
+        // callback 回呼函式
+        // function delayedAdd(n1,n2,delayTime,callback){
+        //     window.setTimeout(function(){
+        //         callback(n1+n2);
+        //     },delayTime)
+        // }
+        // function test(){
+        //     delayedAdd(3,4,2000, function(result){
+        //         console.log(result);
+        //     })
+        // }
+        // test();
+
+        // function delayedAdd(n1,n2,delayTime){
+        //     // 建立 Promise 物件: 把要做的事情放在 Promise 內
+        //     return new Promise(function(resolve,reject){
+        //         window.setTimeout(function(){
+        //             resolve(n1+n2); // 工作完成，呼叫 resolve 函式，並且把結果透過參數傳遞進去
+        //         },delayTime)
+        //     });
+            
+        // }
+        // function test(){
+        //     let promise = delayedAdd(3,4,2000);
+        //     promise.then(function(result){
+        //         console.log(result);
+        //     })
+        // }
+        // test();
+        
+        // let states = new Promise(function(resolve,reject){
+        //   // axios.get ...
+        //   axios.get('url')
+        //     .then(function(res){
+        //       resolve(res);
+        //     })  
+        // })
+        // .then(function(result){
+        //   return result;
+        //   // console.log(result);
+        // });
+
+        // new Vue({
+        //   el: '#app',
+        //   data: states,
+        // });
+
+        (async function(){           
+          // const delay = (s) => {
+          //   return new Promise(function(resolve){  // 回傳一個 promise
+          //     setTimeout(resolve,s);               // 等待多少秒之後 resolve()
+          //   });
+          // };
+          // function delay(s){
+          //   return new Promise(function(resolve){  // 回傳一個 promise
+          //     setTimeout(resolve,s);               // 等待多少秒之後 resolve()
+          //   });
+          // }
+          console.log('first');
+          function test1(){
+            console.log('test1');
+          }
+          function test2(){
+            console.log('222');
+          }
+          function test3(){
+            console.log('333');
+          }
+          await test2();
+          await test3();
+          await test1();
+          console.log('last');
+        }());
+
+        // object.define && proxy
+
+
+        // 同步與非同步
+        // 同步 (Synchronous) 與 非同步 (Asynchronous)
+        // 兩者容易搞混我覺得很大的原因出在 Synchronous 被翻譯成「同步」，光看字面上就可能把它想成是「所有動作同時進行」，但事實上剛好相反。
+        // 可能青菜先處理好，也可能番茄先處理好，但不要緊，等到青菜、番茄這些食材都弄好了，最後再一起裝盤、出餐。
+        // 像這樣處理事件的流程不會被「卡住」，就是非同步 (Asynchronous) 的概念。
+        // 因為只有一個廚師，所以要嘛先處理青菜、要嘛先處理番茄，必須先弄完一項之後再去處理另一項，整個流程會被前一個步驟卡住。
+        // 像這樣「先完成 A 才能做 B、C、D ...」的運作方式我們就會把它稱作「同步」(Synchronous) 。
+
+      //   var funcA = function(callback){
+      //   var i = Math.random() + 1;
+
+      //   window.setTimeout(function(){
+      //     console.log('function A');
+
+      //     // 如果 callback 是個函式就呼叫它
+      //     if( typeof callback === 'function' ){
+      //       callback();
+      //     }
+
+      //   }, i * 1000);
+      // };
+
+      // var funcB = function(){
+      //   var i = Math.random() + 1;
+
+      //   window.setTimeout(function(){
+      //     console.log('function B');
+      //   }, i * 1000);
+      // };
+
+      // // 為了確保先執行 funcA 再執行 funcB, 呼叫 funcA() 的時候，將 funcB 作為參數帶入
+      // funcA( funcB );
+
+
+      // function funcA(){
+      //   return new Promise(function(resolve, reject){
+      //     window.setTimeout(function(){
+      //       console.log('A');
+      //       resolve('A');
+      //     }, (Math.random() + 1) * 1000);
+      //   });
+      // }
+
+      // function funcB(){
+      //   return new Promise(function(resolve, reject){
+      //     window.setTimeout(function(){
+      //       console.log('B');
+      //       resolve('B');
+      //     }, (Math.random() + 1) * 1000);
+      //   });
+      // }
+
+      // function funcC(){
+      //   return new Promise(function(resolve, reject){
+      //     window.setTimeout(function(){
+      //       console.log('C');
+      //       resolve('C');
+      //     }, (Math.random() + 1) * 1000);
+      //   });
+      // }
+      // funcA().then(funcB).then(funcC);
+
+      
+
+    </script>
     </div>
   </body>
 </html>

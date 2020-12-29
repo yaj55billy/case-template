@@ -15,25 +15,111 @@
     <meta property='og:image' content=''/>
     <meta property='og:url' content=''/>
     <title></title>
-    <script type='text/javascript' src='vendor/js/jquery.3.1.1.min.js'></script>
+    <script type='text/javascript' src='vendor/js/jquery.3.5.1.min.js'></script>
     <link rel='stylesheet' href='vendor/css/animate.css'/>
     <link rel='stylesheet' href='vendor/css/font-awesome.min.css'/>
     <link rel='stylesheet' href='css/styles.css' type='text/css'/>
   </head>
   <body>
     <div class='document' id='app'>
-      <header class='header'>
+      <header class="header">
+        <div class="container">
+          <a class="header__logo" href="index.html">
+            LOGO
+            <!-- <img src="images/logo.png" alt=""/> -->
+          </a>
+          <nav class="header__nav">
+            <a href="" class="header__nav-list">項目一</a>
+            <a href="" class="header__nav-list">項目二</a>
+            <a href="" class="header__nav-list">項目三</a>
+          </nav>
+          <div class="header__menu js-menu">
+            <span class="header__menu-global header__menu-top"></span>
+            <span class="header__menu-global header__menu-middle"></span>
+            <span class="header__menu-global header__menu-bottom"></span>
+          </div>
+        </div>
+      </header>
+      <!-- <header class='header'>
         <div class='container'>
           <a class='logo' href='#'></a>
           <nav class='nav'>
             <a class='nav-list' href=''>...</a>
           </nav>
+          <style>
+            .te{
+              cursor: pointer;
+            }
+          </style>
+          <div class="te" data-set="0">內容一</div>
+          <div class="te" data-set="1">二二二</div>
+          <div class="te" data-set="2">第三號</div>
+          <div class="te" data-set="3">四個</div>
         </div>
-      </header>
-      <div class='main'></div>
+      </header> -->
+
+      <div class='main' style="background-color: #ccc; min-height: 800px;">
+        <div class="container">
+          <div class="tab">
+            <div class="tab-menu">
+              <a href="javascript:" class="tab-menu__list active" data-tab="tab1">選項一</a>
+              <a href="javascript:" class="tab-menu__list" data-tab="tab2">選項二</a>
+              <a href="javascript:" class="tab-menu__list" data-tab="tab3">選項三</a>
+              <a href="javascript:" class="tab-menu__list" data-tab="tab4">選項四</a>
+            </div>
+            <div class="tab-content">
+              <div class="tab-content__list tab1">
+                <h2>Tab 1 content</h2>
+                <p>Nulla eleifend felis vitae velit tristique imperdiet. Etiam nec imperdiet elit. Pellentesque sem lorem, scelerisque sed facilisis sed, vestibulum sit amet eros.</p>
+              </div>
+              <div class="tab-content__list tab2">
+                <h2>Tab 2 content</h2>
+                <p>Nulla eleifend felis vitae velit tristique imperdiet. Etiam nec imperdiet elit. Pellentesque sem lorem, scelerisque sed facilisis sed, vestibulum sit amet eros.</p>
+              </div>
+              <div class="tab-content__list tab3">
+                <h2>Tab 3 content</h2>
+                <p>Nulla eleifend felis vitae velit tristique imperdiet. Etiam nec imperdiet elit. Pellentesque sem lorem, scelerisque sed facilisis sed, vestibulum sit amet eros.</p>
+              </div>
+              <div class="tab-content__list tab4">
+                <h2>Tab 4 content</h2>
+                <p>Nulla eleifend felis vitae velit tristique imperdiet. Etiam nec imperdiet elit. Pellentesque sem lorem, scelerisque sed facilisis sed, vestibulum sit amet eros.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
       <footer class='footer'></footer>
       <script src='vendor/js/wow.min.js'></script>
       <script src='js/all.js'></script>
+      <script>
+        (function(){
+          function selectEle(ele){
+            return document.querySelectorAll(ele);
+          };
+
+          function transArr(simArr){
+            return Array.prototype.slice.call(simArr);
+          }
+          var teEle = selectEle('.te');
+          var teEleArr = transArr(teEle);
+
+          teEleArr.forEach(function(item,index,array){
+            // console.log(item,index,array);
+            item.addEventListener('click',function(el){
+              console.log(el);
+              // var catc = this.getAttribute('data-set');
+              // if(item.getAttribute('data-set') === catc){
+              //   console.log(item);
+              // } 
+              
+              this.style.color = '#3ca5e6';
+              // 如何選到點到之外的元素 ?
+            });
+          });
+          
+        })();
+      </script>
     </div>
   </body>
 </html>

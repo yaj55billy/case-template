@@ -191,40 +191,59 @@ if (navigator.userAgent.match(/android/i)) {
 // });
 
 // 漢堡選單
-// var Menu = {
-//   el: {
-//     ham: $('.menu'),
-//     menuTop: $('.menu-top'),
-//     menuMiddle: $('.menu-middle'),
-//     menuBottom: $('.menu-bottom')
-//   },
+var Menu = {
+  el: {
+    ham: $('.header__menu'),
+    menuTop: $('.header__menu-top'),
+    menuMiddle: $('.header__menu-middle'),
+    menuBottom: $('.header__menu-bottom')
+  },
+  init: function () {
+    Menu.bindUIactions();
+  },
+  bindUIactions: function () {
+    Menu.el.ham.on('click',function (event) {
+      event.preventDefault();
+      Menu.activateMenu(event);
+    });
+  },
+  activateMenu: function () {
+    Menu.el.menuTop.toggleClass('header__menu-top--click');
+    Menu.el.menuMiddle.toggleClass('header__menu-middle--click');
+    Menu.el.menuBottom.toggleClass('header__menu-bottom--click');
+    $('.header__nav').slideToggle(); // 展開
+  }
+};
+Menu.init();
 
-//   init: function () {
-//     Menu.bindUIactions();
-//   },
+var Tab = {
+  el: {
+    menu: $('.tab-menu__list'),
+    content: $('.tab-content__list'),
+    contentCurr: function(str){
+      return $('.tab-content__list.'+ str)
+    },
+  },
+  init: function () {
+    Tab.clickfunc();
+  },
+  clickfunc: function(){
+    Tab.el.menu.on('click',function (event) {
+      event.preventDefault();
+      if($(this).hasClass('active')){ // 點選自己時
+        return false;
+      } else {
+        var catchNum = $(this).attr('data-tab');
+        Tab.el.menu.removeClass('active');
+        $(this).addClass('active');
+        Tab.el.content.hide();
+        Tab.el.contentCurr(catchNum).fadeIn();
+      }
+    });
+  }
+}
+Tab.init();
 
-//   bindUIactions: function () {
-//     Menu.el.ham
-//       .on(
-//         'click',
-//         function (event) {
-//           Menu.activateMenu(event);
-//           event.preventDefault();
-//         }
-//       );
-//   },
-
-//   activateMenu: function () {
-//     Menu.el.menuTop.toggleClass('menu-top-click');
-//     Menu.el.menuMiddle.toggleClass('menu-middle-click');
-//     Menu.el.menuBottom.toggleClass('menu-bottom-click');
-//   }
-// };
-// Menu.init();
-
-// $('.js_menu').click(function () {
-//   $(this).siblings('ul').toggleClass('active');
-// });
 
 /* ---------------------------------------------
   時間倒數
