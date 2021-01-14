@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type='text/javascript' src='vendor/js/jquery.3.5.1.min.js'></script>
+  <link rel='stylesheet' href='vendor/css/animate.css'/>
+  <link rel='stylesheet' href='vendor/css/font-awesome.min.css'/>
+  <link rel='stylesheet' href='css/styles.css' type='text/css'/>
+  <style>
+    input[type="file"]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="document">
+    <label for="uploadFile">
+      <img src="images/icon-doc.png" alt="">
+      <h2>上傳檔案</h2>
+    </label>
+    <input type="file" id="uploadFile">
+    <div>
+      <img src="images/" alt="" class="uploadPic">
+    </div>
+    <script src='vendor/js/wow.min.js'></script>
+    <script>
+      (function($){
+        $("#uploadFile").change(function() {
+          var readFile = new FileReader();
+          var $this = $(this);
+          var mfile = $this[0].files[0]; 
+          readFile.readAsDataURL(mfile);
+          readFile.onload = function() {
+            $('.uploadPic').attr("src", this.result);
+          }
+        });
+      })($);
+    </script>
+    <script src='js/all.js'></script>
+  </div>
+</body>
+
+</html>

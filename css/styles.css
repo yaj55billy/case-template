@@ -639,6 +639,15 @@ textarea {
     .tab-content__list.tab1 {
       display: block; }
 
+.collapse__head {
+  border: solid 1px #555;
+  display: block; }
+
+.collapse__body {
+  padding: 15px;
+  color: #3ca5e6;
+  display: none; }
+
 .icon-test:before {
   content: "";
   position: relative;

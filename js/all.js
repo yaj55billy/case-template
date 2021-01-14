@@ -130,56 +130,8 @@
 //   // }
 // });
 
-/* ---------------------------------------------
-  瀏覽器偵測
---------------------------------------------- */
 
-var getExplorer = (function () {
-  var explorer = window.navigator.userAgent,
-    compare = function (s) {
-      return explorer.indexOf(s) >= 0;
-    },
-    ie11 = (function () {
-      return "ActiveXObject" in window;
-    })();
-  if (compare("MSIE") || ie11) {
-    return "ie";
-  } else if (compare("Firefox") && !ie11) {
-    return "Firefox";
-  } else if (compare("Chrome") && !ie11) {
-    if (explorer.indexOf("Edge") > -1) {
-      return "Edge";
-    } else {
-      return "Chrome";
-    }
-  } else if (compare("Opera") && !ie11) {
-    return "Opera";
-  } else if (compare("Safari") && !ie11) {
-    return "Safari";
-  }
-})();
 
-if (getExplorer == "ie") {
-  // 如果是 IE 就做...
-  // $(".pw-change-btn").fadeOut(400);
-}
-if (getExplorer == "Edge") {
-  // 如果是 IE 就做...
-  // $(".pw-change-btn").fadeOut(400);
-}
-
-/*判斷手機系統是Android還是IOS*/
-if (navigator.userAgent.match(/android/i)) {
-  //如果是Android的話
-} else if (navigator.userAgent.match(/(iphone|ipad|ipod);?/i)) {
-  //如果是IOS的話
-} else {
-  //其他，電腦的瀏覽器，可以
-}
-
-/* ---------------------------------------------
-      header
-  --------------------------------------------- */
 
 // $(window).scroll(function () {
 //   var window_scrollTop = $(window).scrollTop();
@@ -216,6 +168,7 @@ var Menu = {
 };
 Menu.init();
 
+// TAB 
 var Tab = {
   el: {
     menu: $('.tab-menu__list'),
@@ -245,6 +198,80 @@ var Tab = {
 Tab.init();
 
 
+// 瀏覽器偵測
+var getExplorerObj = {
+  el: {
+    explorer: window.navigator.userAgent,
+    compare: function (s) {
+      return getExplorerObj.el.explorer.indexOf(s) >= 0;
+    },
+    ie11: (function () {
+      return "ActiveXObject" in window;
+    })(),
+  },
+  judgeBroswerStr: function(){
+    if (getExplorerObj.el.compare("MSIE") || getExplorerObj.el.ie11) {
+      return "ie";
+    } else if (getExplorerObj.el.compare("Firefox") && !getExplorerObj.el.ie11) {
+      return "Firefox";
+    } else if (getExplorerObj.el.compare("Chrome") && !getExplorerObj.el.ie11) {
+      if (getExplorerObj.el.explorer.indexOf("Edge") > -1) {
+        return "Edge";
+      } else {
+        return "Chrome";
+      }
+    } else if (getExplorerObj.el.compare("Opera") && !getExplorerObj.el.ie11) {
+      return "Opera";
+    } else if (getExplorerObj.el.compare("Safari") && !getExplorerObj.el.ie11) {
+      return "Safari";
+    }
+  },
+  init: function(){
+    switch (getExplorerObj.judgeBroswerStr()) {
+      case 'ie':
+        alert('ie'); // IE8~IE11 有效
+        break;
+      case 'Chrome':
+        alert('Chrome');
+        break;
+      case 'Firefox':
+        alert('Firefox');
+        break;
+      case 'Edge':
+        alert('Edge'); // 無效，目前 Edge 會用 Chrome 引擎
+        break;
+    }
+  },
+}
+// getExplorerObj.init();
+
+/*判斷手機系統是Android還是IOS*/
+// if (navigator.userAgent.match(/android/i)) {
+//   //如果是Android的話
+// } else if (navigator.userAgent.match(/(iphone|ipad|ipod);?/i)) {
+//   //如果是IOS的話
+// } else {
+//   //其他，電腦的瀏覽器，可以
+// }
+
+
+// 收合元件
+// $('.collapse__head').click(function(e){
+//   e.preventDefault();
+//   if($(this).hasClass('active')){
+//     $(this).removeClass('active');
+//     $('.collapse__body').slideUp();
+//     $(this).siblings('.collapse__body').slideUp();
+//   } else{
+//     $('.collapse__body').slideUp();
+//     $(this).siblings('.collapse__body').slideDown();
+//     $(this).addClass('active');
+//   }
+// });
+
+
+
+
 /* ---------------------------------------------
   時間倒數
   --------------------------------------------- */
@@ -269,9 +296,9 @@ function countDownTime() {
   亂數產生 max min 之間的數字
   --------------------------------------------- */
 
-function getRandom(min, max) {
-  return Math.random() * (max - min + 1) + min;
-}
+// function getRandom(min, max) {
+//   return Math.random() * (max - min + 1) + min;
+// }
 
 /* ---------------------------------------------
   jQ 動畫用法
@@ -319,6 +346,8 @@ switch (day) {
     break;
 }
 
+
+
 /* ---------------------------------------------
   字數限制
   --------------------------------------------- */
@@ -354,17 +383,17 @@ $win
   防止連續點擊
   --------------------------------------------- */
 
-$(".jsMbCollapseBtn").click(function (e) {
-  if ($(this).hasClass("active")) {
-    // 防止 active狀態繼續點
-    return false;
-  } else {
-    // do something
+// $(".jsMbCollapseBtn").click(function (e) {
+//   if ($(this).hasClass("active")) {
+//     // 防止 active狀態繼續點
+//     return false;
+//   } else {
+//     // do something
 
-    $(".jsMbCollapseBtn").removeClass("active");
-    $(this).addClass("active");
-  }
-});
+//     $(".jsMbCollapseBtn").removeClass("active");
+//     $(this).addClass("active");
+//   }
+// });
 
 /* ---------------------------------------------
   POP
@@ -451,7 +480,3 @@ function onOrientationchange() {
 //     }
 //   });
 // });
-
-$(".collapse").click(function (e) {
-  console.log($(this).attr("href"));
-});
